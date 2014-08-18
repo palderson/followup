@@ -1,4 +1,22 @@
 <h3>User</h3>
 <p>Email: <%= @user.email if @user.email %></p>
 
-<%= link_to "Add Contact" %>
+<h2>Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%= friendship.friend.email %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+
+<h2>Friended by Users</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li><%=h user.email %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>

@@ -17,6 +17,7 @@ gem 'thin'
 gem 'sprockets-rails', :require => 'sprockets/rails/version'
 gem 'therubyracer'
 gem 'railties', '~> 4.1.0'
+gem 'acts-as-taggable-on'
 
 group :development do
   gem 'better_errors'

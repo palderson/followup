@@ -1,9 +1,13 @@
 <h3>User</h3>
-<p>Email: <%= @user.email if @user.email %></p>
+<p><%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
 
 <h2>Friends</h2>
 <ul>
   <% for friendship in @user.friendships %>
+    <li>
+      <%= friendship.friend.username %>	
+    </li>	
     <li>
       <%= friendship.friend.email %>
       (<%= link_to "remove", friendship, :method => :delete %>)

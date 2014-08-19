@@ -14,6 +14,10 @@ gem 'devise'
 gem 'pg'
 gem 'simple_form'
 gem 'thin'
+gem 'sprockets-rails', :require => 'sprockets/rails/version'
+gem 'therubyracer'
+gem 'railties', '~> 4.1.0'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
